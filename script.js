@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function() {
         
         let hotSearchesHtml = '<h4>热门搜索</h4><ul>';
         hotSearches.forEach(search => {
-            hotSearchesHtml += `<li><a href="#" onclick="document.getElementById(\'search-input\').value=\'${search}\'; return false;">${search}</a></li>`;
+            hotSearchesHtml += `<li><a href="#" onclick="document.getElementById(\'search-input\').value=\'${search}\'; window.closeModal(); return false;">${search}</a></li>`;
         });
         hotSearchesHtml += '</ul>';
         
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', function() {
         if (history.length > 0) {
             historyHtml += '<ul>';
             history.forEach(item => {
-                historyHtml += `<li><a href="#" onclick="document.getElementById(\'search-input\').value=\'${item}\'; closeModal(); return false;">${item}</a></li>`;
+                historyHtml += `<li><a href="#" onclick="document.getElementById(\'search-input\').value=\'${item}\'; window.closeModal(); return false;">${item}</a></li>`;
             });
             historyHtml += '</ul>';
             historyHtml += '<button onclick="clearSearchHistory()" style="margin-top: 10px; padding: 5px 10px; background-color: #f0f0f0; border: none; border-radius: 4px; cursor: pointer;">清空历史</button>';
