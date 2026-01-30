@@ -14,8 +14,12 @@ window.addEventListener('DOMContentLoaded', function() {
             // 模拟搜索行为
             console.log('搜索内容:', query);
             
-            // 这里可以添加真实的搜索逻辑，比如跳转到搜索结果页
-            // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            // 保存搜索历史
+            saveSearchHistory(query);
+            
+            // 跳转到Google搜索结果页
+            const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(googleSearchUrl, '_blank');
             
             // 模拟搜索延迟和反馈
             searchButton.textContent = '搜索中...';
@@ -24,10 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 searchButton.textContent = '搜索';
                 searchButton.disabled = false;
-                
-                // 显示搜索成功提示
-                alert(`已搜索: ${query}\n\n这是一个模拟搜索，实际项目中会跳转到搜索结果页`);
-            }, 1000);
+            }, 500);
         } else {
             alert('请输入搜索内容');
         }
