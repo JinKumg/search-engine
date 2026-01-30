@@ -83,10 +83,8 @@ window.addEventListener('DOMContentLoaded', function() {
             const siteName = this.querySelector('span').textContent;
             console.log('访问网站:', siteName);
             
-            // 这里可以添加跳转到对应网站的逻辑
-            // window.open(getSiteUrl(siteName), '_blank');
-            
-            alert(`即将访问: ${siteName}\n\n这是一个模拟操作，实际项目中会跳转到对应网站`);
+            // 跳转到对应网站
+            window.open(getSiteUrl(siteName), '_blank');
         });
     });
     
